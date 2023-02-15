@@ -95,7 +95,6 @@ def QSlackInterface(UserID, channelID, inputtext, BOT_TOKEN):
         full_ai_review = re.sub(check_text * 2, check_text, full_ai_review)
 
     # 出力された質問を送信する
-    print("h")
     headers = {"Authorization": "Bearer " + TOKEN}
     data = {
         'channel': SENT_CHANNEL,
