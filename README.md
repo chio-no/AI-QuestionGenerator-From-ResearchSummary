@@ -9,7 +9,7 @@ WISS2022で発表した「研究概要を基に質問を生成するAIシステ�
 
 ※この実装だとDMで動作しません。DMで動作させたい場合は`SlackAPI.py`に以下のコードを追加してください
 ```python:SlackAPI.py
-@Qapp.event("<@導入したSlack BotのユーザID>")
+@Qapp.message("<@導入したSlack BotのユーザID>")
 def message_yoi(event, say):
     QSlackInterface(event["user"], event["channel"], event["text"], bot_token)
 ```
