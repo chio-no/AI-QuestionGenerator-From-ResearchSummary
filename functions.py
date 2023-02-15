@@ -14,7 +14,7 @@ import os
 
 # Deepl APIによる翻訳（日→英）
 def TranslateJatoEnbyDeepL(text):
-    KEY = "DeepLのAPIキーを設定してください"
+    KEY = "APIキーを設定してください"
     target_text = "EN-US"
     translate = deepl.Translator(KEY)
     result = translate.translate_text(text, target_lang=target_text)
@@ -24,7 +24,7 @@ def TranslateJatoEnbyDeepL(text):
 
 # Deepl APIによる翻訳（英→日）
 def TranslateEntoJabyDeepL(text):
-    KEY = str(os.getenv("DeepLのAPIキーを設定してください"))
+    KEY = "APIキーを設定してください"
     target_text = "JA"
     translate = deepl.Translator(KEY)
     result = translate.translate_text(text, target_lang=target_text)
@@ -35,7 +35,7 @@ def TranslateEntoJabyDeepL(text):
 # abst→処理対象文字列, user→使用するユーザのID
 
 def DQuestionbyOpenAI(abst, user):
-    API_KEY = "Open AIのAPIキーを設定してください"
+    API_KEY = "APIキーを設定してください"
     openai.api_key = API_KEY
 
     # OpenAIが提供しているModeration Endpointに入力文章をチェックさせる
@@ -95,6 +95,7 @@ def QSlackInterface(UserID, channelID, inputtext, BOT_TOKEN):
         full_ai_review = re.sub(check_text * 2, check_text, full_ai_review)
 
     # 出力された質問を送信する
+    print("h")
     headers = {"Authorization": "Bearer " + TOKEN}
     data = {
         'channel': SENT_CHANNEL,

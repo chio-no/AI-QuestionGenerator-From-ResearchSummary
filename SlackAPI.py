@@ -6,8 +6,8 @@ from slack_bolt.adapter.socket_mode import SocketModeHandler
 import os
 
 # Slack APIのアプリレベルトークンとボットレベルトークンを設定します
-bot_token = str(os.getenv("BOT_TOKEN_01"))
-app_token = str(os.getenv("APP_TOKEN_01"))
+bot_token = "BOT_TOKEN"
+app_token = "APP_TOKEN"
 
 # ボットトークンとソケットモードハンドラーを使ってアプリを初期化します
 Qapp = App(token=bot_token)
@@ -17,6 +17,7 @@ Qapp = App(token=bot_token)
 @Qapp.event("app_mention")
 def message_hey(event, say):
     QSlackInterface(event["user"], event["channel"])
+    print(event["user"])
 
 
 # アプリを起動します
