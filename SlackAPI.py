@@ -16,8 +16,7 @@ Qapp = App(token=bot_token)
 # Slack Botにメンションされた時に動作
 @Qapp.event("app_mention")
 def message_hey(event, say):
-    QSlackInterface(event["user"], event["channel"])
-    print(event["user"])
+    QSlackInterface(event["user"], event["channel"], event["text"], bot_token)
 
 
 # アプリを起動します
