@@ -1,0 +1,2 @@
+# AI-QuestionGenerator-From-ResearchSummary
+WISS2022で発表した「研究概要を基に質問を生成するAIシステム」のソースコードです
